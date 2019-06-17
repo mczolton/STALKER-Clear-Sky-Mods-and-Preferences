@@ -1,0 +1,44 @@
+STALKER FOV SWITCHER v1.4
+
+
+What's new in v1.4:
+Clear Sky v1.5.10 support added. But only for versions patched with nodvd.
+The expanded menu of FOV choice (67.50, 75, 83, 85, 90) is added for all versions.
+
+What's new in v1.3:
+Clear Sky v1.5.04 - 1.5.07 support added. But only for versions patched with RELOADED nodvd.
+You may find nodvd at http://gamecopyworld.com
+The [EFIGS] nodvd v1.5.07 also is suitable for russian version of the game.
+
+Description:
+This program switches FOV (field of view) by changing xrgame.dll to the corrected one.
+With expanded FOV (Field of View) appears the sense of dynamics at movement, other perception of surrounding, the world seems more volumetric.
+
+It is intended for:
+STALKER SHADOW OF CHERNOBYL v1.0003-v1.0006
+STALKER build 3120
+STALKER CLEAR SKY v1.5.04-1.5.07 (only versions with nodvd installed)
+STALKER CLEAR SKY v1.5.10 (only versions with nodvd installed)
+
+Installation:
+Copy it to the game folder.
+BACKUP your original xrgame.dll somewhere. In the case of problems just copy it back.
+Run fov_switch.cmd
+In the opened window enter the number from 1 till 40 depending on your game version and chosen FOV.
+
+I do not recommend to create a server/clients in Shadow of Chernobyl by the Internet, using changed xrgame.dll.
+It will not be possible to connect. Or it will be necessary to agree in advance that on all computers in a network would be the same xrgame.dll.
+But in Clear Sky it's possible to connect by internet with the machines which have not this patch.
+
+Do not forget that either Shadow of Chernobyl or Clear Sky supports external camera modes by F1-F3.
+Plus and minus buttons on the right of keyboard are used to zoom.
+Also you may use F4 in mp to switch into free-fly mode, when you are offline.
+To enable it you should use the console and enter four commands:
+
+bind cam_1 kF1
+bind cam_2 kF2
+bind cam_3 kF3
+bind cam_4 kF4
+
+
+MacroN
