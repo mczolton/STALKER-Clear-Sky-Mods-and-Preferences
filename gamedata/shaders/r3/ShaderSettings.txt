@@ -1,0 +1,75 @@
+///////////////////////////////////////
+// STALKER Shaders MAX 0.8 - By Kingo64
+#ifndef SSM_Mount
+#define SSM_Mount
+//////////////////////////////////////////////////////////////////
+//Feature Enable/Disable: Comment a feature (Add the //) to disable, or uncomment (Remove the //) to enable.
+//////////////////////////////////////////////////////////////////
+
+	//#define USE_MBLUR		//Enables Motion Blur. This forces Motion Blur on like -mblur. Adjust the blur amount with "r2_mblur" in the console.
+	//#define SATURATION_FILTER	// Enables Saturation Filter, giving a grey like appearance to areas which are "unsafe".
+	//#define CONTRAST_FILTER 	// Enables Contrast Filter, giving a grey like appearance to areas which are "unsafe".
+
+	//#define FLOAT32_BLINN_PHONG
+	//#define FLOAT32_SUNSHAFTS
+	//#define USE_SJITTER		//Enables shadow jittering.
+	//#define JITTER_SUN_SHAFTS
+
+	//#define CUSTOM_SHADOWMAP_RESOLUTION int(2048)	//Use a custom shadow size. Default is 1024 (1024x1024).
+
+//////////////////////////////
+//Motion Blur
+//////////////////////////////
+
+	#define MBLUR_SAMPLES_VAR half(12)
+	#define MBLUR_CLAMP_VAR half(0.001)
+
+//////////////////////////////
+//Saturation and Contrast
+//////////////////////////////
+
+	#define COLOR_SATURATION float(0.5)		//Level of Grey. 0 is all grey (Black and White), 1 is no Grey (Why have this enabled?)
+	#define COLOR_SAT_SUN_COEF float(0.5)		//How much influence sun lighting has on the saturation.
+	#define CONTRAST_FILTER_COEF float(0.15)	//Level of full screen contrast.
+
+//////////////////////////////
+//Advanced
+//////////////////////////////
+
+	#define BLOOM_CUSTOM 1.h
+	#define HDR_CUSTOM 9.h
+
+//May improve performance/compatibility:
+	// #define USE_FETCH4
+	// #define USE_HWSMAP
+	// #define USE_HWSMAP_PCF
+
+
+//////////////////////////////
+//Debug Settings
+//////////////////////////////
+
+// #define DBG_TEST_NMAP
+// #define DBG_TEST_NMAP_SPEC
+// #define DBG_TEST_SPEC
+// #define DBG_TEST_LIGHT
+// #define DBG_TEST_LIGHT_SPEC
+
+// #define USE_GAMMA_22		//Much less gamma and more contrast
+// #define USE_SUNFILTER	//Increases power of the sun and adds jittering
+
+// #define USE_BRANCHING
+// #define USE_VTF
+// #define FP16_FILTER
+// #define FP16_BLEND
+
+// #define USE_SUPER_SPECULAR
+// #define USE_PARALLAX
+// #define USE_TDETAIL
+// #define USE_LM_HEMI
+// #define USE_DISTORT
+// #define USE_R2_STATIC_SUN
+// #define USE_SUNMASK
+// #define DBG_TMAPPING
+
+#endif

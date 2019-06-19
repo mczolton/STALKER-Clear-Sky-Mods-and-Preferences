@@ -1,0 +1,32 @@
+#include "common.h"
+uniform half3x4 m_v2w;
+uniform float4 screen_res;
+struct _input {
+float4 hpos:POSITION;
+#ifdef USE_VTF
+float4 tc0:TEXCOORD0;
+#else
+float2 tc0:TEXCOORD0;
+#endif
+float2 tcJ:TEXCOORD1;
+};
+struct v2p {
+float2 tc0:TEXCOORD0;
+float2 tc1:TEXCOORD1;
+};
+float4 main(_input I):COLOR0 {
+float4 P0=tex2D(s_position,I.tc0+0.5f*screen_res.zw);
+float4 P1=tex2D(s_position,I.tc0-0.5f*screen_res.zw);
+float4 P2=tex2D(s_position,I.tc0+0.5f*float2(screen_res.z,-screen_res.w));
+float4 P3=tex2D(s_position,I.tc0+0.5f*float2(-screen_res.z,screen_res.w));
+float4 P=P0;
+if(P1.z<P.z)P=P1;
+if(P2.z<P.z)P=P2;
+if(P3.z<P.z)P=P3;
+#if SSAO_OPT_DATA==2
+return float4(P.zzzz);
+#else
+P=tex2D(s_position,I.tc0-0.5f*screen_res.zw);
+return float4(P.zzzz);
+#endif
+}
