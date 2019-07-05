@@ -16,5 +16,5 @@ steam_appid.txt
 STEAM_serial.txt
 unins000.dat
 unins000.exe*
-unins001.dat
-unins001.exe*
+unins00*.dat
+unins00*.exe*
